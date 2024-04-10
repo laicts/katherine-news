@@ -1,0 +1,181 @@
+<!-- Ajustar para trazer as informações corretas -->
+
+
+{% extends "index.html" %}
+{% load static %}
+{% block main-content %}
+
+<section id="contact" class="contact mb-5 " >
+  
+     
+  <div class="container" data-aos="fade-up" >
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="category-title" style="font-size: 35px;">Cadastro de Usuário</h1>
+      </div>
+    </div>
+
+    
+
+    <div class="form mt-3">
+
+      
+      <!-- <form  action="" method="POST" id="form" novalidate> -->
+      <form  action="{% url 'user_register' %}" method="post" role="form" class="php-email-form" id="signup_form"></form>
+
+        {% csrf_token %}
+
+        <!-- {% bootstrap_form form %}  -->
+
+        <div class="row">
+          <div class="row gy-4 pb-5 mt-1">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-outline-secondary" style="border-radius: 0%">
+                <input
+                  type="radio"
+                  name="options"
+                  id="optionReader"
+                  autocomplete="off"
+                  checked
+                />
+                Leitor
+              </label>
+              <label class="btn btn-outline-secondary" style="border-radius: 0%">
+                <input
+                  type="radio"
+                  name="options"
+                  id="optionAuthor"
+                  autocomplete="off"
+                />
+                Autor
+              </label>
+              <label class="btn btn-outline-secondary" style="border-radius: 0%">
+                <input
+                  type="radio"
+                  name="options"
+                  id="optionEditor"
+                  autocomplete="off"
+                />
+                Editor
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              id="username"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="password"
+              placeholder="Senha"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="name"
+            placeholder="Nome"
+            required
+          />
+        </div>
+        <div class="row">
+          <div class="form-group col-md-4">
+            <input
+              type="date"
+              name="birth_date"
+              class="form-control"
+              id="birth_date"
+              placeholder="Data de Nascimento"
+              required
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              name="city"
+              class="form-control"
+              id="city"
+              placeholder="Cidade"
+              required
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              name="state"
+              id="state"
+              placeholder="Estado"
+              required
+            />
+          </div>
+        </div>
+        
+        <div class="row">
+
+        </div>
+          
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="inputGroupFile02">
+                <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
+          </div>
+          
+        </div>
+
+        <div class="form-group">
+          <textarea
+            class="form-control"
+            name="message"
+            rows="5"
+            placeholder="Message"
+            required
+          ></textarea>
+        </div>
+
+        
+        {% if sucess %}
+
+        <div class="m-3">
+          <div class="error-message"></div>
+          <div class="sent-message">Cadastro realizado com sucesso!</div>
+        </div>
+
+        {% endif %}
+
+        <div class="text-center">
+          <button type="submit" >Salvar</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}
