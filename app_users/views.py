@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Reader, Author, Editor
+from .forms import ReaderForm, AuthorForm, EditorForm
 
 from katherine_news.settings import BASE_DIR, STATIC_ROOT, STATIC_URL, STATICFILES_DIRS
 
@@ -12,6 +13,7 @@ from katherine_news.settings import BASE_DIR, STATIC_ROOT, STATIC_URL, STATICFIL
 
 def home(request):
     return render(request, "index.html")
+
 def about(request):
     return render(request, "about.html")
 
@@ -19,42 +21,44 @@ def user_login(request):
     if request.method == "GET":
         return render(request, "signin.html")
 
+def users(request):
+    return render(request, "users.html")
 
-def user_register(request):
-    # print(STATICFILES_DIR)
-    sucess = False
+def add_reader(request):
+    sucess = False 
+    form = ReaderForm(request.POST, request.FILES)
+    if form.is_valid(): 
+        sucess = True
+        form.save()
+        # return render(request, 'add_category.html', {'categories': Category.objects.all()})
+    context = {
+        'form': form,
+        'sucesso': sucess
+    }
+    return render(request, 'users_reader.html', context)
 
-    if request.method == "GET":
-        return render(request, "signup.html")
-    
-    elif request.method == "POST":
-        options = request.POST.get('options')
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        email = request.POST.get('email')
-        name = request.POST.get('name')
-        birth_date = request.POST.get('birth_date')
-        city = request.POST.get('city')
-        state = request.POST.get('state')
+def add_author(request):
+    sucess = False 
+    form = AuthorForm(request.POST, request.FILES)
+    if form.is_valid(): 
+        sucess = True
+        form.save()
+        # return render(request, 'add_category.html', {'categories': Category.objects.all()})
+    context = {
+        'form': form,
+        'sucesso': sucess
+    }
+    return render(request, 'users_author.html', context)
 
-        reader = Reader(
-            username = username,
-            password = password,
-            email = email,
-            name = name,
-            birth_date = birth_date,
-            city = city,
-            state = state
-        )
-
-        print(reader)
-
-
-        
-        # if form.is_valid():
-        #     form.save()
-        #     sucess = True
-
-    context = {"sucess": sucess}
-
-    return render(request, "signup.html", context)
+def add_editor(request):
+    sucess = False 
+    form = EditorForm(request.POST, request.FILES)
+    if form.is_valid(): 
+        sucess = True
+        form.save()
+        # return render(request, 'add_category.html', {'categories': Category.objects.all()})
+    context = {
+        'form': form,
+        'sucesso': sucess
+    }
+    return render(request, 'users_editor.html', context)

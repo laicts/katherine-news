@@ -3,7 +3,51 @@
 
 {% block main-content %}
 
-<h1>Autores</h1>
-<p>Esta página deve trazer uma lista dos autores</p>
+
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9" data-aos="fade-up">
+            <h3 class="category-title " style="font-size: 30px;">Autores
+                <a href="/users/author" class="mr-5">
+                    <span class="bi-plus-circle-dotted ml-5" style="margin:10px;" label="Adicionar Autor"></span>
+                </a>
+            </h3>
+
+            <div class="row">
+            {% for author in authors %}
+
+                <!-- <div class="col-md-4 border" >
+                    <a href="/category/{{category.id}}" class="me-4 thumbnail">
+                        <img src="/images/{{category.image}}" alt="" class="img-fluid">
+                        {{category.name}}
+                    </a>
+                </div> -->
+
+                <div class="d-md-flex post-entry-2 small-img">
+                    <a href="/category/{{author.id}}" class="me-4 thumbnail">
+                      <img src="{{author.image}}" alt="" class="img-fluid">
+                    </a>
+                    <div>
+                      <h3><a href="/category/{{author.id}}">{{author.name}}</a></h3>
+                      <!-- <div class="d-flex align-items-center author">
+                        <div class="photo"><img src="assets/img/person-2.jpg" alt="" class="img-fluid"></div>
+                        <div class="name">
+                          <h3 class="m-0 p-0"> </h3>
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+                
+            {% endfor %}
+            </div>
+
+        </div>
+
+        {% include "side-menu.html" %}
+    
+      </div>
+    </div>
+</section>
 
 {% endblock %}

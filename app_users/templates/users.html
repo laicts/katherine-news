@@ -5,270 +5,40 @@
 {% load static %}
 {% block main-content %}
 
-<section id="contact" class="contact mb-5 " >
-  <div class = "row">
-    <div class="col-md-6">
-      <div class="container" data-aos="fade-up" >
+<section id="contact" class="contact " >
+    <div class="container justify-content-center" data-aos="fade-up" >
 
-        <div class="row">
-          <div class="col-lg-12 text-center mb-5">
-            <h1 class="category-title" style="font-size: 35px;">Log In de Usuário</h1>
-          </div>
-        </div>
-        
-        <div class="row gy-4">
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-outline-secondary" style="border-radius: 0%">
-              <input
-                type="radio"
-                name="options"
-                id="optionReader"
-                autocomplete="off"
-                checked
-              />
+        <div class="row ">
+            
+          {% block form-user %}
+          <div class="row my-5 py-5" >
+            <div class="col-md-2 "></div>
+            <a class="col-md-2 " href="/users/reader">
+              <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect width="24" height="24" fill="white"></rect> <path d="M12 6.90909C10.8999 5.50893 9.20406 4.10877 5.00119 4.00602C4.72513 3.99928 4.5 4.22351 4.5 4.49965C4.5 6.54813 4.5 14.3034 4.5 16.597C4.5 16.8731 4.72515 17.09 5.00114 17.099C9.20405 17.2364 10.8999 19.0998 12 20.5M12 6.90909C13.1001 5.50893 14.7959 4.10877 18.9988 4.00602C19.2749 3.99928 19.5 4.21847 19.5 4.49461C19.5 6.78447 19.5 14.3064 19.5 16.5963C19.5 16.8724 19.2749 17.09 18.9989 17.099C14.796 17.2364 13.1001 19.0998 12 20.5M12 6.90909L12 20.5" stroke="#000000" stroke-linejoin="round"></path> <path d="M19.2353 6H21.5C21.7761 6 22 6.22386 22 6.5V19.539C22 19.9436 21.5233 20.2124 21.1535 20.0481C20.3584 19.6948 19.0315 19.2632 17.2941 19.2632C14.3529 19.2632 12 21 12 21C12 21 9.64706 19.2632 6.70588 19.2632C4.96845 19.2632 3.64156 19.6948 2.84647 20.0481C2.47668 20.2124 2 19.9436 2 19.539V6.5C2 6.22386 2.22386 6 2.5 6H4.76471" stroke="#000000" stroke-linejoin="round"></path> </g></svg>
               Leitor
-            </label>
-            <label class="btn btn-outline-secondary" style="border-radius: 0%">
-              <input
-                type="radio"
-                name="options"
-                id="optionAuthor"
-                autocomplete="off"
-              />
+            </a>
+            <a class="col-md-2" href="/users/author">
+              <svg fill="#000000" height="64px" width="64px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 964.07 964.07" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M850.662,877.56c-0.77,0.137-4.372,0.782-10.226,1.831c-230.868,41.379-273.337,48.484-278.103,49.037 c-11.37,1.319-19.864,0.651-25.976-2.042c-3.818-1.682-5.886-3.724-6.438-4.623c0.268-1.597,2.299-5.405,3.539-7.73 c1.207-2.263,2.574-4.826,3.772-7.558c7.945-18.13,2.386-36.521-14.51-47.999c-12.599-8.557-29.304-12.03-49.666-10.325 c-12.155,1.019-225.218,36.738-342.253,56.437l-57.445,45.175c133.968-22.612,389.193-65.433,402.622-66.735 c11.996-1.007,21.355,0.517,27.074,4.4c3.321,2.257,2.994,3.003,2.12,4.997c-0.656,1.497-1.599,3.264-2.596,5.135 c-3.835,7.189-9.087,17.034-7.348,29.229c1.907,13.374,11.753,24.901,27.014,31.626c8.58,3.78,18.427,5.654,29.846,5.654 c4.508,0,9.261-0.292,14.276-0.874c9.183-1.065,103.471-17.67,280.244-49.354c5.821-1.043,9.403-1.686,10.169-1.821 c9.516-1.688,15.861-10.772,14.172-20.289S860.183,875.87,850.662,877.56z"></path> <path d="M231.14,707.501L82.479,863.005c-16.373,17.127-27.906,38.294-33.419,61.338l211.087-166.001 c66.081,29.303,118.866,38.637,159.32,38.637c71.073,0,104.065-28.826,104.065-28.826c-66.164-34.43-75.592-98.686-75.592-98.686 c50.675,21.424,156.235,46.678,156.235,46.678c140.186-93.563,213.45-296.138,213.45-296.138 c-14.515,3.99-28.395,5.652-41.475,5.652c-65.795,0-111-42.13-111-42.13l183.144-39.885C909.186,218.71,915.01,0,915.01,0 L358.176,495.258C295.116,551.344,250.776,625.424,231.14,707.501z"></path> </g> </g></svg>
               Autor
-            </label>
-            <label class="btn btn-outline-secondary" style="border-radius: 0%">
-              <input
-                type="radio"
-                name="options"
-                id="optionEditor"
-                autocomplete="off"
-              />
+            </a>
+            <a class="col-md-2" href="/users/editor">
+              <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#6c6c6c"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 4L10 4C11.1046 4 12 4.89543 12 6L12 18C12 19.1046 11.1046 20 10 20L9 20" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M15 4L14 4C12.8954 4 12 4.89543 12 6L12 18C12 19.1046 12.8954 20 14 20L15 20" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10 12H14" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
               Editor
-            </label>
+            </a>
+            <div class="col-md-2 "></div>
           </div>
-        </div>
 
-        <div class="form mt-5">
-          <form  action="{% url 'users' %}" method="post" role="form" class="php-email-form">
-            <div class="row">
-              <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  name="name"
-                  class="form-control"
-                  id="username"
-                  placeholder="Username"
-                  required
-                />
-              </div>
-              <div class="form-group col-md-6">
-                <input
-                  type="password"
-                  class="form-control"
-                  name="password"
-                  id="password"
-                  placeholder="Senha"
-                  required
-                />
-              </div>
-            </div>
-            
-            </div>
-            
-            <div class="row">
+         
 
-            </div>
-              
-              <div class="input-group mb-3">
-                <input type="file" class="form-control" id="inputGroupFile02">
-                <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
-              </div>
-              
-            </div>
-
-            <!-- <div class="form-group">
-              <textarea
-                class="form-control"
-                name="message"
-                rows="5"
-                placeholder="Message"
-                required
-              ></textarea>
-            </div> -->
-
+          {% endblock%}
             
 
-            <div class="my-3">
-              <div class="error-message"></div>
-              <div class="sent-message">Cadastro realizado com sucesso!</div>
-            </div>
-
-            <div class="text-center">
-              <button type="submit" >Salvar</button>
-            </div>
-          </form>
         </div>
-      </div>
-</div>
 
-
-<div class="col-md-6">
-  <div class="container" data-aos="fade-up" >
-
-    <div class="row">
-      <div class="col-lg-12 text-center mb-5">
-        <h1 class="category-title" style="font-size: 35px;">Cadastro de Usuário</h1>
-      </div>
-    </div>
-    
-    <div class="row gy-4">
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-outline-secondary" style="border-radius: 0%">
-          <input
-            type="radio"
-            name="options"
-            id="optionReader"
-            autocomplete="off"
-            checked
-          />
-          Leitor
-        </label>
-        <label class="btn btn-outline-secondary" style="border-radius: 0%">
-          <input
-            type="radio"
-            name="options"
-            id="optionAuthor"
-            autocomplete="off"
-          />
-          Autor
-        </label>
-        <label class="btn btn-outline-secondary" style="border-radius: 0%">
-          <input
-            type="radio"
-            name="options"
-            id="optionEditor"
-            autocomplete="off"
-          />
-          Editor
-        </label>
-      </div>
     </div>
 
-    <div class="form mt-5">
-      <form  action="{% url 'users' %}" method="post" role="form" class="php-email-form">
-        <div class="row">
-          <div class="form-group col-md-6">
-            <input
-              type="text"
-              name="name"
-              class="form-control"
-              id="username"
-              placeholder="Username"
-              required
-            />
-          </div>
-          <div class="form-group col-md-6">
-            <input
-              type="password"
-              class="form-control"
-              name="password"
-              id="password"
-              placeholder="Senha"
-              required
-            />
-          </div>
-        </div>
-        <div class="form-group">
-          <input
-            type="email"
-            class="form-control"
-            name="email"
-            id="email"
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <input
-            type="text"
-            class="form-control"
-            name="name"
-            id="name"
-            placeholder="Nome"
-            required
-          />
-        </div>
-        <div class="row">
-          <div class="form-group col-md-4">
-            <input
-              type="date"
-              name="birth_date"
-              class="form-control"
-              id="birth_date"
-              placeholder="Data de Nascimento"
-              required
-            />
-          </div>
-          <div class="form-group col-md-4">
-            <input
-              type="text"
-              name="city"
-              class="form-control"
-              id="city"
-              placeholder="Cidade"
-              required
-            />
-          </div>
-          <div class="form-group col-md-4">
-            <input
-              type="text"
-              class="form-control"
-              name="state"
-              id="state"
-              placeholder="Estado"
-              required
-            />
-          </div>
-        </div>
-        
-        <div class="row">
 
-        </div>
-          
-          <div class="input-group mb-3">
-            <input type="file" class="form-control" id="inputGroupFile02">
-            <!-- <label class="input-group-text" for="inputGroupFile02">Upload</label> -->
-          </div>
-          
-        </div>
 
-        <!-- <div class="form-group">
-          <textarea
-            class="form-control"
-            name="message"
-            rows="5"
-            placeholder="Message"
-            required
-          ></textarea>
-        </div> -->
-
-        
-
-        <div class="my-3">
-          <div class="error-message"></div>
-          <div class="sent-message">Cadastro realizado com sucesso!</div>
-        </div>
-
-        <div class="text-center">
-          <button type="submit" >Salvar</button>
-        </div>
-      </form>
-    </div>
-    <!-- End Contact Form -->
-  </div>
-</div>
-</div>
 </section>
 
 {% endblock %}
