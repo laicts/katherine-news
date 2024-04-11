@@ -34,8 +34,8 @@ STATE_CHOICES = (
 # Create your models here.
 class Reader(models.Model):
 
-    username = models.CharField(max_length=30)
-    email = models.EmailField(max_length=255)
+    username = models.CharField(max_length=30, unique=True)
+    email = models.EmailField(max_length=255, unique=True)
     password = models.CharField(max_length=100)
 
     name = models.CharField(max_length=255, null=True, blank=True)
@@ -54,8 +54,8 @@ class Reader(models.Model):
 
 class Author(models.Model):
 
-    username = models.CharField(max_length=30)
-    email = models.EmailField(max_length=255)
+    username = models.CharField(max_length=30, unique=True)
+    email = models.EmailField(max_length=255, unique=True)
     password = models.CharField(max_length=100)
 
     name = models.CharField(max_length=255, null=True, blank=True)
@@ -73,8 +73,8 @@ class Author(models.Model):
 
 
 class Editor(models.Model):
-    username = models.CharField(max_length=30)
-    email = models.EmailField(max_length=255)
+    username = models.CharField(max_length=30, unique=True)
+    email = models.EmailField(max_length=255, unique=True)
     password = models.CharField(max_length=100)
 
     name = models.CharField(max_length=255, null=True, blank=True)
