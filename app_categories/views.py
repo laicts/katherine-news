@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from app_news.models import News
 from .models import Category
 from .forms import CategoryForm
 
@@ -9,7 +11,9 @@ def categories(request):
 
 
 def category(request, category_id):
-    return render(request, "category.html", {'category': Category.objects.get(id=category_id)})
+    category = Category.objects.get(id=category_id)
+    news_list = News.objects.filter(category_id=category_id)
+    return render(request, "category.html", {'category': category, 'category_news': news_list})
 
 
 def add_category(request):
@@ -25,4 +29,4 @@ def add_category(request):
     }
     return render(request, 'add_category.html', context)
 
-    
+  

@@ -45,8 +45,61 @@
 
     <main id="main">
       {% block main-content %}
-        {% include "session-posts.html" %}
-        {% include "session-category.html" %}
+        <!-- ======= Post Grid Section ======= -->
+      <section id="posts" class="posts">
+        <div class="container" data-aos="fade-up">
+
+          <div class="row mx-auto">
+
+            <div class="col-lg-4">
+              <div class="post-entry-1 lg">
+                <a href="/news/{{emphasis_news.id}}"><img src="/news/{{emphasis_news.image}}" alt="" class="img-fluid"></a>
+                <div class="post-meta"><span class="date">{{emphasis_news.category}}</span> <span class="mx-1">&bullet;</span> <span>{{emphasis_news.publish_date}}</span></div>
+                <h2><a href="/news/{{emphasis_news.id}}">{{emphasis_news.title}}</a></h2>
+                <p class="mb-4 d-block">{{emphasis_news.subtitle}}</p>
+
+                <div class="d-flex align-items-center author">
+                  <div class="name">
+                    <h3 class="m-0 p-0">Autor: {{emphasis_news.author}}</h3>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="col-lg-8">
+              <div class="row g-5">
+                
+                
+                <div class="col-lg-4 border-start custom-border">
+                  {% for news in column1_news %}
+                  <div class="post-entry-1">
+                    <a href="/news/{{news.id}}"><img src="{{news.image}}" alt="" class="img-fluid"></a>
+                    <div class="post-meta"><span class="date">{{news.category}}</span> <span class="mx-1">&bullet;</span> <span>{{news.publish_date}}</span></div>
+                    <h2><a href="/news/{{news.id}}">{{news.title}}</a></h2>
+                  </div>
+                  {% endfor %}
+                </div>
+                
+                
+                <div class="col-lg-4 border-start custom-border">
+                  {% for news in column2_news %}
+                  <div class="post-entry-1">
+                    <a href="/news/{{news.id}}"><img src="{{news.image}}" alt="" class="img-fluid"></a>
+                    <div class="post-meta"><span class="date">{{news.category}}</span> <span class="mx-1">&bullet;</span> <span>{{news.publish_date}}</span></div>
+                    <h2><a href="/news/{{news.id}}">{{news.title}}</a></h2>
+                  </div>
+                  {% endfor %}
+                </div>
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section> 
       {% endblock %}
     </main>
 

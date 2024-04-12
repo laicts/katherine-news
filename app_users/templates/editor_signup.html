@@ -1,0 +1,29 @@
+{% extends "users.html" %}
+{% load bootstrap5 %}
+{% block content-user %}
+
+<div class="col-md-9 row py-5">
+    <div class="col-md-9 " data-aos="fade-up">
+        <h3 class="category-title">
+            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#6c6c6c"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 4L10 4C11.1046 4 12 4.89543 12 6L12 18C12 19.1046 11.1046 20 10 20L9 20" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M15 4L14 4C12.8954 4 12 4.89543 12 6L12 18C12 19.1046 12.8954 20 14 20L15 20" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10 12H14" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            Editor - Cadastrar
+        </h3>
+        
+        {% if sucess %}
+        <p class="alert alert-success"> Cadastro realizado com sucesso </p>
+        {% else %}
+        <form action="" method="POST" enctype="multipart/form-data" id="form" class="mr-5" style="border-radius:0%;" novalidate>
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+        </form>
+        {% endif %}
+    </div>
+
+    
+</div>
+
+
+  
+
+{% endblock %}

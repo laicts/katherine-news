@@ -10,11 +10,10 @@ class NewsForm(ModelForm):
             "title",
             "subtitle",
             "content",
-            "name",
-            "birth_date",
-            "city",
-            "state",
-            "image",
+            "author",
+            "editor",
+            "category",
+            "image"
         ]
         widgets = {"password": forms.PasswordInput()}
 

@@ -36,56 +36,56 @@ class Reader(models.Model):
 
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(max_length=255, unique=True)
-    password = models.CharField(max_length=100)
+    password = models.CharField(max_length=100, verbose_name="Senha")
 
-    name = models.CharField(max_length=255, null=True, blank=True)
-    birth_date = models.DateField(null=True, blank=True)
+    name = models.CharField(max_length=255, null=True, blank=True, verbose_name="Nome")
+    birth_date = models.DateField(null=True, blank=True, verbose_name="Data de Nascimento")
 
-    city = models.CharField(max_length=50, null=True, blank=True)
-    state = models.CharField(choices=STATE_CHOICES, max_length=2, null=True, blank=True)
+    city = models.CharField(max_length=50, null=True, blank=True, verbose_name="Cidade")
+    state = models.CharField(choices=STATE_CHOICES, max_length=2, null=True, blank=True, verbose_name="Estado")
 
-    register_date = models.DateTimeField(auto_now_add=True)
+    register_date = models.DateTimeField(auto_now_add=True, verbose_name="Data de Registro")
 
-    image = models.ImageField(upload_to="images/", null=True, blank=True)
+    image = models.ImageField(upload_to="images/", null=True, blank=True, verbose_name="Imagem de Perfil")
 
     def __str__(self) -> str:
-        return f"{self.name} - {self.register_date} - {self.email}"
+        return f"{self.name} [{self.username}]"
 
 
 class Author(models.Model):
 
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(max_length=255, unique=True)
-    password = models.CharField(max_length=100)
+    password = models.CharField(max_length=100, verbose_name="Senha")
 
-    name = models.CharField(max_length=255, null=True, blank=True)
-    birth_date = models.DateTimeField(null=True, blank=True)
+    name = models.CharField(max_length=255, null=True, blank=True, verbose_name="Nome")
+    birth_date = models.DateTimeField(null=True, blank=True, verbose_name="Data de Nascimento")
 
-    city = models.CharField(max_length=50, null=True, blank=True)
-    state = models.CharField(choices=STATE_CHOICES, max_length=2, null=True, blank=True)
+    city = models.CharField(max_length=50, null=True, blank=True, verbose_name="Cidade")
+    state = models.CharField(choices=STATE_CHOICES, max_length=2, null=True, blank=True, verbose_name="Estado")
 
-    register_date = models.DateTimeField(auto_now_add=True)
+    register_date = models.DateTimeField(auto_now_add=True, verbose_name="Data de Registro")
 
-    image = models.ImageField(upload_to="images/", null=True, blank=True)
+    image = models.ImageField(upload_to="images/", null=True, blank=True, verbose_name="Imagem de Perfil")
 
     def __str__(self) -> str:
-        return f"{self.name} - {self.register_date} - {self.email}"
+        return f"{self.name} [{self.username}]"
 
 
 class Editor(models.Model):
     username = models.CharField(max_length=30, unique=True)
     email = models.EmailField(max_length=255, unique=True)
-    password = models.CharField(max_length=100)
+    password = models.CharField(max_length=100, verbose_name="Senha")
 
-    name = models.CharField(max_length=255, null=True, blank=True)
-    birth_date = models.DateTimeField(null=True, blank=True)
+    name = models.CharField(max_length=255, null=True, blank=True, verbose_name="Nome")
+    birth_date = models.DateTimeField(null=True, blank=True, verbose_name="Data de Nascimento")
 
-    city = models.CharField(max_length=50, null=True, blank=True)
-    state = models.CharField(choices=STATE_CHOICES, max_length=2, null=True, blank=True)
+    city = models.CharField(max_length=50, null=True, blank=True, verbose_name="Cidade")
+    state = models.CharField(choices=STATE_CHOICES, max_length=2, null=True, blank=True, verbose_name="Estado")
 
-    register_date = models.DateTimeField(auto_now_add=True)
+    register_date = models.DateTimeField(auto_now_add=True, verbose_name="Data de Registro")
 
-    image = models.ImageField(upload_to="images/", null=True, blank=True)
+    image = models.ImageField(upload_to="images/", null=True, blank=True, verbose_name="Imagem de Perfil")
 
     def __str__(self) -> str:
-        return f"{self.name} - {self.register_date} - {self.email}"
+        return f"{self.name} [{self.username}]"

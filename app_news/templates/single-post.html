@@ -1,9 +1,54 @@
+<!-- Ajustar para trazer as informações corretas -->
+
 {% extends "index.html" %}
-
-
+{% load bootstrap5 %}
 {% block main-content %}
 
-<h1>Notícia</h1>
-<p>Página de conteúdo da notícia</p>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9" data-aos="fade-up">
+                
+                <h3 class="category-title" style="font-size: 30px;">{{news.title}}</h3>
+                
+                <!-- <h3 class="category-title" style="font-size: 30px;">{{author.name}}</h3> -->
+
+                <a href="#" class="me-4 thumbnail">
+                    <img src="{{news.image}}" alt="" class="img-fluid">
+                </a>
+
+                <p style="font-size: 30px; color: darkgrey; font-style: italic;">{{news.subtitle}}</p>
+
+                <div class="d-md-flex post-entry-2 half">
+                    <div>
+                        <div class="post-meta">
+                        <span class="date">{{news.category}}</span> <span class="mx-1">&bullet;</span> <span>{{news.publish_date}}</span></div>
+                       
+                        
+                        <div>
+                            {{news.content}}
+                        </div>
+                        <div class="d-flex align-items-center author">
+                            <!-- <div class="photo">
+                                <img src="assets/img/person-2.jpg" alt="" class="img-fluid">
+                            </div> -->
+                            <div class="name">
+                                <h3 class="m-0 p-0">Editor: {{news.editor}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+
+            </div>
+
+            {% include "side-menu.html" %}
+
+        </div>
+    </div>
+</section>
 
 {% endblock %}
